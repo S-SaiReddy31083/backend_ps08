@@ -17,7 +17,7 @@ public class Issue {
     private int votes;
     private String imageUrl;
     private String videoUrl;
-
+    private String location;
     private String status; // OPEN, IN_PROGRESS, RESOLVED
 
     private LocalDateTime createdAt;
@@ -87,6 +87,13 @@ public class Issue {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
 
