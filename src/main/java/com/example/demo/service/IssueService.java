@@ -41,13 +41,14 @@ public class IssueService {
         issue.setStatus(status);
         return issueRepository.save(issue);
     }
-    public Issue saveIssueWithMedia(String title, String description, String category,
+    public Issue saveIssueWithMedia(String title, String description, String category, String location,
             MultipartFile image, MultipartFile video) {
 
 Issue issue = new Issue();
 issue.setTitle(title);
 issue.setDescription(description);
 issue.setCategory(category);
+issue.setLocation(location);
 
 try {
 // Create uploads folder if not exists
