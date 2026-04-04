@@ -4,6 +4,8 @@ import com.example.demo.entity.Issue;
 import com.example.demo.service.IssueService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.MediaType;
+
 
 import java.util.List;
 
@@ -19,16 +21,20 @@ public class IssueController {
     }
 
     // 1. Raise Issue
-    @PostMapping(consumes = "multipart/form-data")
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Issue createIssue(
             @RequestParam String title,
             @RequestParam String description,
             @RequestParam String category,
+            @RequestParam String location,
             @RequestParam(required = false) MultipartFile image,
             @RequestParam(required = false) MultipartFile video
     ) {
-        return issueService.saveIssueWithMedia(title, description, category, image, video);
+        return issueService.saveIssueWithMedia(title, description, category, location, image, video);
     }
+
+    // other methods unchanged...
+
 
     // 2. View All Issues
     @GetMapping
