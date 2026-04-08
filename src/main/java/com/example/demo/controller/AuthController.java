@@ -32,7 +32,7 @@ public class AuthController {
         userRepository.save(user);
 
         return ResponseEntity.ok(
-            Map.of("message", "Signup successful")
+            Map.of("message", "Signup successful")    
         );
     }
 
