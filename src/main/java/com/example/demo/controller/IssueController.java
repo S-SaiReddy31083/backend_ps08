@@ -21,18 +21,10 @@ public class IssueController {
     }
 
     // 1. Raise Issue
-    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public Issue createIssue(
-            @RequestParam String title,
-            @RequestParam String description,
-            @RequestParam String category,
-            @RequestParam String location,
-            @RequestParam(required = false) MultipartFile image,
-            @RequestParam(required = false) MultipartFile video
-    ) {
-        return issueService.saveIssueWithMedia(title, description, category, location, image, video);
+    @PostMapping
+    public Issue createIssue(@RequestBody Issue issue) {
+    	return issueService.saveIssue(issue);
     }
-
     // other methods unchanged...
 
 
