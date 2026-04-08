@@ -15,6 +15,9 @@ public class User {
     private String password;
     private String role; // CITIZEN or POLITICIAN
 
+    private String phone;     // ✅ ADD
+    private String address;   // ✅ ADD
+
     public Long getId() {
         return id;
     }
@@ -53,5 +56,23 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    // ✅ NEW GETTERS & SETTERS
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
